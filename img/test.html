@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>e-Cultural Village | Welcome</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fff8e1 50%,
+        #ffffff 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111111;
+    padding: 20px;
+}
+
+/* Main Card */
+.landing-card {
+    max-width: 1100px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+/* Left Panel */
+.left-panel {
+    padding: 50px;
+}
+
+.brand-badge {
+    display: inline-block;
+    background: #F7C600;
+    color: #111111;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.hero-text {
+    font-size: 1.05rem;
+    color: #555;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn-login {
+    background: #F7C600;
+    color: #111111;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background: #ffd60a;
+    color: #111111;
+}
+
+.btn-register {
+    background: #D62828;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.btn-register:hover {
+    background: #b71c1c;
+    color: white;
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.feature-list i {
+    color: #F7C600;
+}
+
+/* Right Panel */
+.right-panel {
+    background: linear-gradient(
+        180deg,
+        #111111 0%,
+        #D62828 100%
+    );
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.welcome-icon {
+    font-size: 80px;
+    color: #F7C600;
+    margin-bottom: 20px;
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 20px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .left-panel,
+    .right-panel {
+        padding: 30px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card landing-card">
+        <div class="row g-0">
+
+            <!-- LEFT PANEL -->
+            <div class="col-lg-7">
+                <div class="left-panel">
+
+                    <div class="brand-badge">
+                        🌍 e-Cultural Village
+                    </div>
+
+                    <h1 class="hero-title">
+                        Discover Sarawak Through Interactive Cultural Learning
+                    </h1>
+
+                    <p class="hero-text">
+                        Explore ethnic diversity, cultural heritage,
+                        immersive student projects, digital storytelling,
+                        and interactive learning experiences.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <button class="btn btn-login px-4 py-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            Login
+                        </button>
+
+                        <button class="btn btn-register px-4 py-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#registerModal">
+                            Register
+                        </button>
+                    </div>
+
+                    <ul class="feature-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Interactive ethnic learning</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Cultural video experience</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Student innovation showcase</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Quiz and gamification</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="col-lg-5">
+                <div class="right-panel h-100 d-flex flex-column justify-content-center">
+
+                    <div class="welcome-icon">
+                        <i class="bi bi-building"></i>
+                    </div>
+
+                    <h3 class="fw-bold mb-3">
+                        Welcome to Sarawak Digital Heritage
+                    </h3>
+
+                    <p class="mb-4">
+                        Experience Sarawak culture through modern digital innovation.
+                    </p>
+
+                    <button class="btn btn-light fw-bold"
+                        data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        Get Started
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Login</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="loginForm">
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">
+                        Login
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal fade" id="registerModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Register</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="registerForm">
+
+                    <div class="mb-3">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" id="registerName" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="registerEmail" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="registerPassword" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger w-100">
+                        Register
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Auto redirect if already login
+if(localStorage.getItem("isLoggedIn") === "true"){
+    window.location.href = "index.html";
+}
+
+// Register
+document.getElementById("registerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const user = {
+        name: document.getElementById("registerName").value,
+        email: document.getElementById("registerEmail").value,
+        password: document.getElementById("registerPassword").value
+    };
+
+    localStorage.setItem("ecvUser", JSON.stringify(user));
+
+    alert("Registration successful. Please login.");
+    location.reload();
+});
+
+// Login
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    const savedUser = JSON.parse(localStorage.getItem("ecvUser"));
+
+    if(!savedUser){
+        alert("Please register first.");
+        return;
+    }
+
+    if(email === savedUser.email && password === savedUser.password){
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("loggedInUser", savedUser.name);
+
+        alert("Login successful!");
+        window.location.href = "arif-index.html";
+    } else {
+        alert("Invalid email or password.");
+    }
+});
+</script>
+
+</body>
+</html>
