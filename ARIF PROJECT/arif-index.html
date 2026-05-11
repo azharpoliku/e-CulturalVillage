@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>e-Cultural Village</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1') center/cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.card {
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #0d6efd !important;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">e-Cultural Village</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto" id="mainNavbar">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
+                <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+                <li class="nav-item"><a class="nav-link" href="#quiz">Quiz</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+    <div>
+        <h1>Explore Sarawak Culture</h1>
+        <p>Immersive Learning Experience</p>
+        <a href="#map" class="btn btn-warning">Start Exploring</a>
+    </div>
+</section>
+
+<!-- MAP SECTION -->
+<section id="map" class="container mt-5">
+    <h2 class="text-center mb-4">🗺️ Taburan Penduduk Sarawak</h2>
+    <p class="text-center">Klik button untuk lihat maklumat etnik utama Sarawak</p>
+
+    <div class="row g-3 justify-content-center text-center mt-4">
+        <div class="col-md-2 col-6">
+            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#ibanModal">Iban</button>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#bidayuhModal">Bidayuh</button>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <button class="btn btn-warning w-100" data-bs-toggle="modal" data-bs-target="#melanauModal">Melanau</button>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <button class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#melayuModal">Melayu</button>
+        </div>
+
+        <div class="col-md-2 col-6">
+            <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#orangUluModal">Orang Ulu</button>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section id="video" class="container mt-5">
+    <h2 class="text-center mb-4">🎥 Cultural Experience</h2>
+
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.youtube.com/embed/o6KqUt4NGjg"
+            title="Cultural Video"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="container mt-5">
+    <h2 class="text-center mb-4">🧠 Quiz</h2>
+
+    <div class="card p-4 text-center">
+        <p>Kaum manakah tinggal di rumah panjang?</p>
+
+        <button class="btn btn-outline-primary m-2" onclick="checkAnswer('wrong')">Bidayuh</button>
+        <button class="btn btn-outline-success m-2" onclick="checkAnswer('correct')">Iban</button>
+        <button class="btn btn-outline-secondary m-2" onclick="checkAnswer('wrong')">Melanau</button>
+
+        <p id="result" class="mt-3 fw-bold"></p>
+    </div>
+</section>
+
+<!-- PROJECT SECTION -->
+<section id="projects" class="container mt-5 text-center">
+    <h2 class="mb-4">🌍 Immersive Cultural Experience</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card p-4 shadow">
+                <h3>Rumah Iban Interactive</h3>
+                <p>Immersive cultural experience</p>
+
+                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    View Demo
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal fade" id="projectModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5>🌿 Rumah Iban Experience</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="ratio ratio-16x9 mb-4">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/o6KqUt4NGjg?rel=0"
+                        title="Rumah Iban"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <img src="https://picsum.photos/300/200?1" class="img-fluid rounded" alt="Gallery 1">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://picsum.photos/300/200?2" class="img-fluid rounded" alt="Gallery 2">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://picsum.photos/300/200?3" class="img-fluid rounded" alt="Gallery 3">
+                    </div>
+                </div>
+
+                <div class="text-center mb-3">
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+                    </audio>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal fade" id="contactModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5>📩 Contact Us</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="contactForm">
+
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Message</label>
+                        <textarea class="form-control" rows="4" required></textarea>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ETHNIC MODALS -->
+<div class="modal fade" id="ibanModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Iban</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Largest ethnic group in Sarawak. Famous for longhouses.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="bidayuhModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Bidayuh</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Mainly located in Serian, Bau and Padawan.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="melanauModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Melanau</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Known for sago production and traditional food.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="melayuModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Melayu</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Rich in heritage, food and cultural traditions.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="orangUluModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Orang Ulu</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Includes Kenyah, Kayan, Kelabit and Lun Bawang.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white mt-5 pt-4 pb-3 text-center">
+    <div class="container">
+        <div class="mb-3">
+            <i class="bi bi-facebook fs-4 me-3"></i>
+            <i class="bi bi-twitter fs-4 me-3"></i>
+            <i class="bi bi-tiktok fs-4 me-3"></i>
+            <i class="bi bi-youtube fs-4"></i>
+        </div>
+
+        <p>© 2026 Reserved e-Cultural Village</p>
+        <p>Jabatan Teknologi Maklumat dan Komunikasi</p>
+        <p>Politeknik Kuching Sarawak</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* ===============================
+   AUTH CHECK
+================================= */
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "landing.html";
+}
+
+/* ===============================
+   DISPLAY USER NAME
+================================= */
+document.addEventListener("DOMContentLoaded", function () {
+    const username = localStorage.getItem("loggedInUser");
+    const navMenu = document.getElementById("mainNavbar");
+
+    if (username && navMenu) {
+        const userLi = document.createElement("li");
+        userLi.className = "nav-item dropdown";
+
+        userLi.innerHTML = `
+            <a class="nav-link dropdown-toggle text-warning fw-bold"
+               href="#"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
+               👤 ${username}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a class="dropdown-item" href="#" onclick="logoutUser()">Logout</a>
+                </li>
+            </ul>
+        `;
+
+        navMenu.appendChild(userLi);
+    }
+});
+
+/* ===============================
+   LOGOUT FUNCTION
+================================= */
+function logoutUser() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("loggedInUser");
+    alert("Logout successful!");
+    window.location.href = "arif-login.html";
+}
+
+/* ===============================
+   QUIZ FUNCTION
+================================= */
+function checkAnswer(answer) {
+    document.getElementById("result").innerHTML =
+        answer === "correct"
+        ? "✅ Correct!"
+        : "❌ Try Again!";
+}
+
+/* ===============================
+   CONTACT FORM
+================================= */
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    alert("Message sent successfully!");
+    this.reset();
+
+    const modalElement = document.getElementById("contactModal");
+    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+
+    if (modalInstance) {
+        modalInstance.hide();
+    }
+});
+</script>
+
+</body>
+</html>
