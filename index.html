@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>e-Cultural Village | Landing Page</title>
+
+<!-- Bootstrap & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --swk-red: #EE2C38;
+    --swk-yellow: #FFD100;
+    --swk-black: #1A1A1A;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1') center/cover;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--swk-red);
+}
+
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.wireframe-box {
+    background: #f8f9fa;
+    border: 2px dashed var(--swk-red);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infographic-container {
+    background: var(--swk-black);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border: 3px solid var(--swk-yellow);
+}
+
+.iframe-wrapper {
+    position: relative;
+    height: auto;
+}
+
+.iframe-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.team-img {
+    width: 100px;
+    height: 100px;
+    border: 4px solid var(--swk-yellow);
+    padding: 3px;
+    object-fit: cover;
+    background: white;
+}
+
+.member-role {
+    color: var(--swk-red);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.roadmap-step {
+    border-left: 3px solid var(--swk-red);
+    padding-left: 25px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.roadmap-step::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background: var(--swk-yellow);
+    border-radius: 50%;
+    border: 3px solid var(--swk-red);
+}
+
+.star-rating .bi-star-fill {
+    color: var(--swk-yellow);
+    font-size: 1.5rem;
+}
+
+.reflection-card {
+    background: white;
+    border-left: 5px solid var(--swk-red);
+}
+</style>
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <span class="text-danger">e-</span>Cultural Village
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto" id="navMenu">
+                <li class="nav-item"><a class="nav-link" href="#wireframe">Wireframe</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features">Ciri Utama</a></li>
+                <li class="nav-item"><a class="nav-link" href="#analytics">Analisis</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reflection">Refleksi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://forms.gle/oPTVGmPC7vcbYnnC7" target="_blank text-warning"><i class="bi bi-pencil-square me-1"></i>Maklum Balas</a></li>
+                <li class="nav-item"><a class="nav-link text-info fw-bold" href="ARIF PROJECT/arif-login.html"><i class="bi bi-play-circle me-1"></i>Demo</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Pasukan</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container px-4 text-center">
+        <h1 class="display-3 fw-bold mb-3">Warisan Budaya, <br><span class="text-warning">Inovasi Digital.</span></h1>
+        <p class="lead mb-5 opacity-75">Merevolusikan PdP Web Design Technology (DFK20013) <br>menerusi pendekatan imersif Sarawak Heritage.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#features" class="btn btn-danger btn-lg px-5 rounded-pill shadow">Mula Belajar</a>
+            <button class="btn btn-outline-light btn-lg px-5 rounded-pill" data-bs-toggle="modal" data-bs-target="#contactModal">Hubungi Kami</button>
+        </div>
+    </div>
+</header>
+
+<section id="wireframe" class="py-5 bg-white border-bottom">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="wireframe-box shadow-sm text-center">
+                    <div class="mb-4">
+                        <i class="bi bi-folder2-open text-danger" style="font-size: 5rem;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3">Rujukan Wireframe</h3>
+                    <p class="text-muted mb-4 px-md-5">Akses kepada dokumentasi visual penuh dan struktur reka bentuk courseware melalui folder Google Drive rasmi.</p>
+                    <a href="https://drive.google.com/drive/folders/1prIpIREkDsZaK_P0kThirSFM1A7AP18n?usp=sharing" target="_blank" class="btn btn-danger btn-lg px-5 rounded-pill shadow">
+                        <i class="bi bi-google me-2"></i> Buka Google Drive
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 ps-lg-5">
+                <h2 class="section-title text-start">Reka Bentuk Wireframe</h2>
+                <p class="text-muted mb-4">Struktur utama Courseware Interaktif e-Cultural Village dibina untuk menyokong PdP digital yang sistematik mengikut standard ARIF.</p>
+                <div class="d-flex mb-3">
+                    <div class="me-3"><i class="bi bi-1-circle-fill text-danger fs-4"></i></div>
+                    <div><h6 class="fw-bold mb-0">Hero section (video budaya)</h6></div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="me-3"><i class="bi bi-2-circle-fill text-danger fs-4"></i></div>
+                    <div><h6 class="fw-bold mb-0">Interactive map (core feature)</h6></div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="me-3"><i class="bi bi-3-circle-fill text-danger fs-4"></i></div>
+                    <div><h6 class="fw-bold mb-0">Cultural media (video/audio)</h6></div>
+                </div>
+                <div class="d-flex mb-3">
+                    <div class="me-3"><i class="bi bi-4-circle-fill text-danger fs-4"></i></div>
+                    <div><h6 class="fw-bold mb-0">Quiz interaktif & Project showcase</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="py-5">
+    <div class="container py-5 text-center">
+        <h2 class="section-title">Platform & Metodologi</h2>
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="card h-100 p-4">
+                    <div class="mb-3 text-danger"><i class="bi bi-mortarboard-fill fs-1"></i></div>
+                    <h3>Flipped Classroom</h3>
+                    <p class="text-muted small">Penggunaan <strong>LMS CIDOS</strong> untuk akses bahan PdP secara fleksibel dan berstruktur.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-4 border-warning border-top border-4">
+                    <div class="mb-3 text-warning"><i class="bi bi-google fs-1"></i></div>
+                    <h3>Google Workspace</h3>
+                    <p class="text-muted small">Integrasi <strong>Google Drive</strong> untuk kolaborasi dan penyimpanan portfolio digital pelajar.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-4">
+                    <div class="mb-3 text-primary"><i class="bi bi-telegram fs-1"></i></div>
+                    <h3>Telegram Group</h3>
+                    <p class="text-muted small">Komunikasi dua hala secara pantas untuk sesi bimbingan dan maklum balas segera.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="analytics" class="py-5 bg-dark text-white">
+    <div class="container py-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-3"><span class="text-warning">Evidence-Based</span> Analytics</h2>
+                <p class="text-secondary lead">Pantau prestasi 52 orang pelajar secara real-time melalui dashboard analytics interaktif kami.</p>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <a href="img/evidence-based.png" target="_blank" class="btn btn-outline-warning rounded-pill px-4">Paparan Penuh</a>
+            </div>
+        </div>
+        <div class="infographic-container">
+            <div class="iframe-wrapper">
+                <img src="img/evidence-based.png" alt="Evidence Based Analytics" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="reflection" class="py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Refleksi & Penarafan</h2>
+            <div class="star-rating mb-2">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="fw-bold">Penarafan Keseluruhan: 4.9 / 5.0</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 p-4 reflection-card">
+                    <div class="mb-3">
+                        <i class="bi bi-quote text-danger fs-1"></i>
+                    </div>
+                    <p class="text-muted fst-italic mb-4">"Mempelajari penggunaan jQuery, pembangunan APK, serta teknik penyelesaian isu pepijat. Kerjasama pasukan amat kritikal bagi memastikan kejayaan projek laman web kami."</p>
+                    <div class="mt-auto d-flex align-items-center">
+                        <div class="bg-dark text-white rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">A</div>
+                        <div>
+                            <h6 class="mb-0 small fw-bold">Anonymous</h6>
+                            <small class="text-danger" style="font-size: 10px;">Pelajar DFK20013</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-4 reflection-card">
+                    <div class="mb-3">
+                        <i class="bi bi-quote text-danger fs-1"></i>
+                    </div>
+                    <p class="text-muted fst-italic mb-4">"Kerja kumpulan ini memberi peluang untuk bekerjasama dengan pelbagai idea berbeza. Ia sangat membantu saya menambah baik kemahiran pengaturcaraan secara praktikal."</p>
+                    <div class="mt-auto d-flex align-items-center">
+                        <div class="bg-dark text-white rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">A</div>
+                        <div>
+                            <h6 class="mb-0 small fw-bold">Anonymous</h6>
+                            <small class="text-danger" style="font-size: 10px;">Pelajar DFK20013</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 p-4 reflection-card">
+                    <div class="mb-3">
+                        <i class="bi bi-quote text-danger fs-1"></i>
+                    </div>
+                    <p class="text-muted fst-italic mb-4">"Memperoleh pengalaman memahami HTML, CSS, JavaScript, dan Bootstrap untuk membina laman web responsif serta meningkatkan kemahiran penyelesaian masalah teknikal pasukan."</p>
+                    <div class="mt-auto d-flex align-items-center">
+                        <div class="bg-dark text-white rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">A</div>
+                        <div>
+                            <h6 class="mb-0 small fw-bold">Anonymous</h6>
+                            <small class="text-danger" style="font-size: 10px;">Pelajar DFK20013</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pautan Refleksi Penuh -->
+        <div class="text-center mt-5">
+            <a href="https://docs.google.com/document/d/19zGTo9ZMXhOMYEOpxungNA53fwUEcf3tvl0-B3z3YA0/edit?usp=sharing" 
+               target="_blank" 
+               class="btn btn-outline-danger btn-lg px-4 rounded-pill shadow-sm">
+                <i class="bi bi-journal-text me-2"></i>Lihat Refleksi Penuh Pelajar
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="roadmap" class="py-5 bg-dark text-white">
+    <div class="container py-5">
+        <h2 class="text-center section-title">Roadmap: AI-Powered Learning</h2>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+                <div class="roadmap-step">
+                    <h5 class="text-warning">2026: Pembangunan AI Tutor</h5>
+                    <p class="text-secondary small">Integrasi AI-powered chatbot untuk bantuan debugging kod Bootstrap secara automatik bagi pelajar.</p>
+                </div>
+                <div class="roadmap-step">
+                    <h5 class="text-warning">2027: Predictive Analytics</h5>
+                    <p class="text-secondary small">Menggunakan AI untuk menganalisis prestasi pelajar dan mencadangkan modul pengukuhan secara personal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="py-5 bg-light">
+    <div class="container py-5">
+        <h2 class="text-center section-title">Pasukan ARIF PKS 2026</h2>
+        <div class="row g-4 justify-content-center mb-4">
+            <div class="col-6 col-md-5 col-lg-4 text-center">
+                <div class="card h-100 p-4 shadow-sm border-top border-warning border-4">
+                    <img src="https://ui-avatars.com/api/?name=Aidawati+Mustapha&background=000&color=fff&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Aidawati">
+                    <h6 class="fw-bold mb-1">Ts. Aidawati binti Mustapha</h6>
+                    <p class="member-role mb-0">Penasihat</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-5 col-lg-4 text-center">
+                <div class="card h-100 p-4 shadow-sm border-top border-warning border-4">
+                    <img src="https://ui-avatars.com/api/?name=Sharafi+Yusoff&background=FFD100&color=000&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Sharafi">
+                    <h6 class="fw-bold mb-1">Sharafi bin Mohamed Yusoff</h6>
+                    <p class="member-role mb-0">Pegawai e-Pembelajaran</p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-3 justify-content-center mb-4">
+            <div class="col text-center">
+                <div class="card h-100 p-4 shadow-sm border-top border-danger border-4">
+                    <img src="https://ui-avatars.com/api/?name=Azhar+Hamid&background=EE2C38&color=fff&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Azhar">
+                    <h6 class="fw-bold mb-1">Azhar bin Abd Hamid</h6>
+                    <p class="member-role mb-2">Ketua Kumpulan</p>
+                    <a href="mailto:azhar.hamid@poliku.edu.my" class="btn btn-sm btn-outline-danger rounded-pill">Hubungi</a>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card h-100 p-4 shadow-sm">
+                    <img src="https://ui-avatars.com/api/?name=Syazwani+Kadir&background=555&color=fff&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Syazwani">
+                    <h6 class="fw-bold mb-1">Syazwani binti Abdul Kadir</h6>
+                    <p class="member-role mb-0">Setiausaha e-Pembelajaran</p>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card h-100 p-4 shadow-sm">
+                    <img src="https://ui-avatars.com/api/?name=Afzan+Omar&background=555&color=fff&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Afzan">
+                    <h6 class="fw-bold mb-1">Afzan binti Omar</h6>
+                    <p class="member-role mb-0">Penyelaras ARIF</p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 row-cols-2 row-cols-md-3 justify-content-center">
+            <div class="col text-center">
+                <div class="card h-100 p-4 shadow-sm">
+                    <img src="https://ui-avatars.com/api/?name=Azizah+Ohamzah&background=555&color=fff&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Azizah">
+                    <h6 class="fw-bold mb-1">Azizah binti Ohamzah</h6>
+                    <p class="member-role mb-0 text-xs">Course Coordinator & UI Designer</p>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card h-100 p-4 shadow-sm">
+                    <img src="https://ui-avatars.com/api/?name=Anizawati+Mukhtar&background=555&color=fff&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Anizawati">
+                    <h6 class="fw-bold mb-1">Anizawati binti Mukhtar</h6>
+                    <p class="member-role mb-0 text-xs">UI & Content Developer</p>
+                </div>
+            </div>
+            <div class="col text-center">
+                <div class="card h-100 p-4 shadow-sm">
+                    <img src="https://ui-avatars.com/api/?name=Surafah+Mos&background=555&color=fff&size=128" class="rounded-circle team-img mx-auto mb-3" alt="Surafah">
+                    <h6 class="fw-bold mb-1">Surafah binti Mos</h6>
+                    <p class="member-role mb-0 text-xs">Penilaian & Dokumentasi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white py-4 border-top border-danger border-4 text-center">
+    <p class="mb-1 fw-bold">ARIF PKS 2026 - e-Cultural Village</p>
+    <p class="mb-2 small"><a href="mailto:azhar.hamid@poliku.edu.my" class="text-white">azhar.hamid@poliku.edu.my</a></p>
+    <small class="text-secondary">Politeknik Kuching Sarawak</small>
+</footer>
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Hubungi Kami</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><p>Emel terus kepada Ketua Projek:</p><a href="mailto:azhar.hamid@poliku.edu.my" class="fw-bold text-danger">azhar.hamid@poliku.edu.my</a></div></div></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
